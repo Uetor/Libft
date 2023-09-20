@@ -6,15 +6,20 @@
 /*   By: pedrogon <pedrogon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 08:45:06 by pedrogon          #+#    #+#             */
-/*   Updated: 2023/05/21 00:44:17 by pedrogon         ###   ########.fr       */
+/*   Updated: 2023/09/20 21:51:06 by pedrogon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 100
+# endif
+
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdarg.h>
 
 /* Comprueba el abecedario, tanto las minusculas como las mayusculas */
 int		ft_isalpha(int c);
@@ -78,4 +83,15 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+char	*get_next_line(int fd);
+// Funciones del printf
+int		ft_pointer(unsigned long x, char *hexa);
+int		ft_unsigned_int(unsigned int long n);
+int		hexalower(unsigned int x, char *hexa);
+int		hexauper(unsigned int x, char *hexa);
+int		ft_decimal(long int decimal, int len, char *sign);
+int		ft_putchar(int c);
+int		ft_putstr(char *str);
+int		conversion(char c, va_list args, int len);
+int		ft_printf(char const *str, ...);
 #endif
